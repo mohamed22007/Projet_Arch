@@ -1,0 +1,10 @@
+datapath: 
+Nexys4: 
+reg: 
+logic: 
+clkUnit: 
+muxpart: 
+logic__1: 
+logic__2: 
+reg__1: 
+diviseurClk10Hz: 

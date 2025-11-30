@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Nov 28 14:56:51 2025
+# Process ID: 2514414
+# Current directory: /home/ani3814/Bureau/projet_uart/clkUnit
+# Command line: vivado -mode tcl -source script_bitstream.tcl
+# Log file: /home/ani3814/Bureau/projet_uart/clkUnit/vivado.log
+# Journal file: /home/ani3814/Bureau/projet_uart/clkUnit/vivado.jou
+#-----------------------------------------------------------
+source script_bitstream.tcl
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.

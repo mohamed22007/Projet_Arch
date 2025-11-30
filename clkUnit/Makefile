@@ -2,7 +2,10 @@ GHDL=ghdl
 GHDLFLAGS=-fsynopsys --std=08
 MODULES=\
     clkUnit.o \
-	testClkUnit.o
+	testClkUnit.o \
+	diviseurClkRX.o \
+	diviseurClkTX.o
+	
 
 TIME=10us
 PLOT=output

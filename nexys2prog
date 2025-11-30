@@ -1,0 +1,9 @@
+#!/bin/bash
+
+carte=`djtgcfg enum | grep Device | cut -d' ' -f2`
+if [[ -f $1.bit ]]
+then
+djtgcfg prog -d ${carte} --index 0 --file $1.bit
+else
+djtgcfg prog -d ${carte} --index 0 --file $1
+fi

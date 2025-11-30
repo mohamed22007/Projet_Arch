@@ -1,0 +1,431 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Nov 28 14:56:51 2025
+# Process ID: 2514414
+# Current directory: /home/ani3814/Bureau/projet_uart/clkUnit
+# Command line: vivado -mode tcl -source script_bitstream.tcl
+# Log file: /home/ani3814/Bureau/projet_uart/clkUnit/vivado.log
+# Journal file: /home/ani3814/Bureau/projet_uart/clkUnit/vivado.jou
+#-----------------------------------------------------------
+source script_bitstream.tcl
+# set design_name "Nexys4"
+# read_vhdl {"clkUnit.vhd" "diviseurClk10Hz.vhd" "Nexys4.vhd"}
+# read_xdc "Nexys4.xdc"
+# set fpga_part "xc7a100tcsg324-1"
+# synth_design -top "${design_name}" -part "${fpga_part}"
+Command: synth_design -top Nexys4 -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2517288 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1851.910 ; gain = 202.719 ; free physical = 340 ; free virtual = 4538
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Nexys4' [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.vhd:23]
+INFO: [Synth 8-3491] module 'diviseurClk10Hz' declared at '/home/ani3814/Bureau/projet_uart/clkUnit/diviseurClk10Hz.vhd:4' bound to instance 'Inst_diviseurClk10Hz' of component 'diviseurClk10Hz' [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'diviseurClk10Hz' [/home/ani3814/Bureau/projet_uart/clkUnit/diviseurClk10Hz.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'diviseurClk10Hz' (1#1) [/home/ani3814/Bureau/projet_uart/clkUnit/diviseurClk10Hz.vhd:10]
+INFO: [Synth 8-3491] module 'clkUnit' declared at '/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:4' bound to instance 'Inst_clkUnit' of component 'clkUnit' [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'clkUnit' [/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:12]
+INFO: [Synth 8-637] synthesizing blackbox instance 'U1' of component 'diviseurClkTX' [/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:31]
+INFO: [Synth 8-637] synthesizing blackbox instance 'U2' of component 'diviseurClkRX' [/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'clkUnit' (2#1) [/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'Nexys4' (3#1) [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.vhd:23]
+WARNING: [Synth 8-3917] design Nexys4 has port led[15] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port an[7] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[6] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[5] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[4] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[3] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[2] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[1] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[0] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[7] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[6] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[5] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[4] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[3] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[2] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[1] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[0] driven by constant 1
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[15]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[14]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[13]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[12]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[11]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[10]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[9]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[8]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[7]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[6]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[5]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[4]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[3]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[2]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[0]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnU
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnL
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnR
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnD
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1913.660 ; gain = 264.469 ; free physical = 407 ; free virtual = 4584
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1913.660 ; gain = 264.469 ; free physical = 390 ; free virtual = 4570
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1913.660 ; gain = 264.469 ; free physical = 389 ; free virtual = 4570
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1913.660 ; gain = 0.000 ; free physical = 377 ; free virtual = 4560
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.xdc]
+Finished Parsing XDC File [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Nexys4_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Nexys4_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2038.441 ; gain = 0.000 ; free physical = 282 ; free virtual = 4488
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2038.441 ; gain = 0.000 ; free physical = 281 ; free virtual = 4487
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 333 ; free virtual = 4539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 333 ; free virtual = 4539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 332 ; free virtual = 4539
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 316 ; free virtual = 4522
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module diviseurClk10Hz 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design Nexys4 has port led[15] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[14] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[13] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[12] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[11] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[10] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[9] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[8] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[7] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[6] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[5] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[4] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[3] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port led[2] driven by constant 0
+WARNING: [Synth 8-3917] design Nexys4 has port an[7] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[6] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[5] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[4] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[3] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[2] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[1] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port an[0] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[7] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[6] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[5] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[4] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[3] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[2] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[1] driven by constant 1
+WARNING: [Synth 8-3917] design Nexys4 has port seg[0] driven by constant 1
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[15]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[14]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[13]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[12]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[11]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[10]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[9]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[8]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[7]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[6]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[5]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[4]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[3]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[2]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[1]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port sw[0]
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnU
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnL
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnR
+WARNING: [Synth 8-3331] design Nexys4 has unconnected port btnD
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 292 ; free virtual = 4504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 278 ; free virtual = 4397
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 319 ; free virtual = 4433
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 318 ; free virtual = 4432
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 294 ; free virtual = 4391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 294 ; free virtual = 4391
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 293 ; free virtual = 4391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 292 ; free virtual = 4390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 292 ; free virtual = 4390
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 290 ; free virtual = 4388
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |diviseurClkTX |         1|
+|2     |diviseurClkRX |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------------------+------+
+|      |Cell                 |Count |
++------+---------------------+------+
+|1     |diviseurClkRX_bbox_1 |     1|
+|2     |diviseurClkTX_bbox_0 |     1|
+|3     |BUFG                 |     1|
+|4     |CARRY4               |     6|
+|5     |LUT1                 |     2|
+|6     |LUT2                 |    24|
+|7     |LUT3                 |     1|
+|8     |LUT4                 |     3|
+|9     |LUT5                 |     1|
+|10    |LUT6                 |     5|
+|11    |FDCE                 |    25|
+|12    |IBUF                 |     2|
+|13    |OBUF                 |    32|
++------+---------------------+------+
+
+Report Instance Areas: 
++------+-----------------------+----------------+------+
+|      |Instance               |Module          |Cells |
++------+-----------------------+----------------+------+
+|1     |top                    |                |   104|
+|2     |  Inst_clkUnit         |clkUnit         |     3|
+|3     |  Inst_diviseurClk10Hz |diviseurClk10Hz |    66|
++------+-----------------------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 289 ; free virtual = 4386
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 50 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2038.441 ; gain = 264.469 ; free physical = 328 ; free virtual = 4426
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2038.441 ; gain = 389.250 ; free physical = 330 ; free virtual = 4429
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2038.441 ; gain = 0.000 ; free physical = 395 ; free virtual = 4500
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.xdc]
+Finished Parsing XDC File [/home/ani3814/Bureau/projet_uart/clkUnit/Nexys4.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'diviseurClkRX' instantiated as 'Inst_clkUnit/U2' [/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:37]
+CRITICAL WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'diviseurClkTX' instantiated as 'Inst_clkUnit/U1' [/home/ani3814/Bureau/projet_uart/clkUnit/clkUnit.vhd:31]
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2074.270 ; gain = 0.000 ; free physical = 331 ; free virtual = 4442
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+22 Infos, 100 Warnings, 2 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 2074.270 ; gain = 670.145 ; free physical = 464 ; free virtual = 4574
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'Inst_clkUnit/U1' of type 'diviseurClkTX' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+ERROR: [DRC INBB-3] Black Box Instances: Cell 'Inst_clkUnit/U2' of type 'diviseurClkRX' has undefined contents and is considered a black box.  The contents of this cell must be defined for opt_design to complete successfully.
+INFO: [Project 1-461] DRC finished with 2 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:00.85 ; elapsed = 00:00:01 . Memory (MB): peak = 2176.895 ; gain = 102.625 ; free physical = 433 ; free virtual = 4544
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+    while executing
+"opt_design"
+    (file "script_bitstream.tcl" line 17)
+invalid command name "ys4.xdTime"
+INFO: [Common 17-83] Releasing license: Implementation
+invalid command name "Common"
+5 Infos, 0 Warnings, 0 Critical Warnings and 3 Errors encountered.
+invalid command name "5"
