@@ -116,20 +116,38 @@ BEGIN
 
      wait for 200 ns;
 
+     -- l'émetteur est dispo ?
+     if not (regE='1' and bufE='1') then
+       wait until regE='1' and bufE='1';
+     end if;
+
+     -- si oui, on charge la donnée
      wait for clk_period;
      -- émission du caractère 0x55
      data <= "01010101";
-
      ld <= '1';
 
-
+     -- on attend de voir que l'ordre d'émission
+     -- a été bien pris en compte avant de rabaisser
+     -- le signal ld
+     if not (regE='1' and bufE='0') then
+       wait until regE='1' and bufE='0';
+     end if;
      wait for clk_period;
-     data <= "10101111";
-     
+     ld <= '0';
      
      -- compléter avec des tests qui montrent que la prise en compte de la demande d'émission
      -- d'un autre caractère se fait lorsqu'on émet un caractère et ceci quelque soit
      -- l'étape d'émission
+
+     wait until bufE = '1';
+     wait for 5000 us;
+     data <= "10011000";
+     ld <= '1';
+
+     
+     wait for clk_period;
+     ld <= '0';
 
      wait;
    end process;

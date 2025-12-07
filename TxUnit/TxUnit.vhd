@@ -14,83 +14,119 @@ end TxUnit;
 
 architecture behavorial of TxUnit is
 
-  signal etat : std_logic_vector (2 downto 0) := "000";
+  -- États de l'automate
+  signal etat : std_logic_vector(2 downto 0) := "000";
+
+  -- Tampon de transmission
   signal Buffer_T : std_logic_vector(7 downto 0);
+
+  -- Registre d’émission
   signal Register_T : std_logic_vector(7 downto 0);
 
 begin
 
-  -- affectation des sorties pour que la simulation aille jusqu'au bout
-  unite_proc: process (clk , reset)
+  unite_proc: process(clk, reset)
+
+    -- Compteur des bits transmis
     variable cpt : natural := 7;
+
   begin
+
+    -- Réinitialisation de l'unité
     if reset = '0' then
-      etat <= "000";
-      Buffer_T <= (others => '0');
-      txd <= '1';
-      regE <= '1';
-      bufE <= '1';
-    elsif (rising_edge (clk)) then 
-    case etat is
 
-      when "000" => 
-      if (ld = '1') then
-        Buffer_T <= data;
-        bufE <= '0';
-        etat <= "001";
-      end if;
-      
-      when "001" =>
-      Register_T <= Buffer_T;
-      bufE <= '1';
-      regE <= '0';
-      etat <= "010" ;
+      etat      <= "000";     -- État initial
+      Buffer_T  <= (others => '0');
+      txd       <= '1';       -- Ligne au repos
+      regE      <= '1';       -- Registre libre
+      bufE      <= '1';       -- Tampon libre
 
-      when "010" =>
-        if (enable = '1')then
-        txd <= '0';
-        cpt := 7;
-        etat <= "011";
-        if (ld = '1' and bufE = '1') then
-                  Buffer_T <= data ;
-                  bufE <='0';
-        end if ;
-        end if;
+    elsif rising_edge(clk) then
 
-      when "011" => 
-      if (cpt > 0 and enable = '1') then
-        txd <= Register_T(cpt);
-        cpt := cpt - 1;
-      elsif (cpt = 0 and enable ='1') then
-        txd <= Register_T(cpt);
-        etat <= "100";
-      end if;
-      if (ld = '1' and bufE = '1') then
-                  Buffer_T <= data ;
-                  bufE <='0';
-      end if ;
+      -- Automate principal
+      case etat is
 
-      when "100" => 
-      if (bufE ='1' and enable = '1') then
-        txd <= '1';
-        regE <= '1';
-        etat <= "001";
-      elsif (bufE = '0' and enable = '1') then
-        txd <= '1';
-        regE <= '1';
-        etat <= "000";
-      end if;
-      if (ld = '1' and bufE = '1') then
-                  Buffer_T <= data ;
-                  bufE <='0';
-      end if ;
+        -- État initial
+        when "000" =>
 
-      when others => null ;
-  end case;
-end if;
+          -- Attente d’une demande d’émission
+          if ld = '1' then
+            Buffer_T <= data;   -- Chargement des données
+            bufE     <= '0';
+            etat     <= "001";
+          end if;
 
-end process;
+        -- Transfert du tampon vers le registre
+        when "001" =>
+          Register_T <= Buffer_T;
+          bufE       <= '1';
+          regE       <= '0';
+          etat       <= "010";
 
+        -- Envoi du bit de start
+        when "010" =>
 
+          -- Début de trame si autorisé
+          if enable = '1' then
+            txd <= '0';         -- Bit de start
+            cpt := 7;
+            etat <= "011";
+
+            -- Charger une nouvelle donnée si le tampon est libre
+            if ld = '1' and bufE = '1' then
+              Buffer_T <= data;
+              bufE <= '0';
+            end if;
+
+          end if;
+
+        -- Transmission des bits de données
+        when "011" =>
+
+          if (cpt > 0 and enable = '1') then
+            txd <= Register_T(cpt);
+            cpt := cpt - 1;
+
+          elsif (cpt = 0 and enable = '1') then
+            txd  <= Register_T(0);
+            etat <= "100";  -- Passage au bit de stop
+          end if;
+
+          -- Charger une donnée si le tampon est libre
+          if ld = '1' and bufE = '1' then
+            Buffer_T <= data;
+            bufE <= '0';
+          end if;
+
+        -- Fin de transmission de la trame
+        when "100" =>
+
+          -- S’il y a une nouvelle trame en attente
+          if bufE = '0' and enable = '1' then
+            txd  <= '1';      -- Bit de stop
+            regE <= '1';
+            etat <= "001";
+
+          -- Sinon, retour à l’état initial
+          elsif bufE = '1' and enable = '1' then
+            txd  <= '1';
+            regE <= '1';
+            etat <= "000";
+          end if;
+
+          -- Charger une nouvelle donnée si le tampon est libre
+          if ld = '1' and bufE = '1' then
+            Buffer_T <= data;
+            bufE <= '0';
+          end if;
+
+        when others =>
+          null;
+
+      end case;
+
+    end if;
+
+  end process;
 
 end behavorial;
