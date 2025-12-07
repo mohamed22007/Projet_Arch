@@ -2,6 +2,9 @@ GHDL=ghdl
 GHDLFLAGS=-fsynopsys --std=08
 MODULES=\
       ../clkUnit/clkUnit.o \
+	  ../clkUnit/diviseurClk10Hz.o \
+	  ../clkUnit/diviseurClkRX.o \
+	  ../clkUnit/diviseurClkTX.o \
       TxUnit.o \
       testTxUnit.o
 
